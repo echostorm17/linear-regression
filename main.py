@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 # kaggle.api.dataset_download_files('mssmartypants/rice-typeclassification', path='D:/code-test/1/', unzip=True)
 
 # Local path to the downloaded file
-file_path = "D:/code-test/1/riceClassification.csv"  # Adjust path as necessary
+file_path = "data/riceClassification.csv"  # Adjust path as necessary
 data = pd.read_csv(file_path)
 # print(data.columns)
 # Assuming the dataset has features and a binary target variable 'type'
