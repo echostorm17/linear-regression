@@ -34,3 +34,13 @@ predictions = lin_reg.predict(X_test)
 mse = mean_squared_error(y_test, predictions)
 print(f'Mean Squared Error: {mse}')
 
+import xgboost as xgb
+
+# Initialize and fit the XGBoost classifier
+xgb_clf = xgb.XGBClassifier(eval_metric='mlogloss')
+xgb_clf.fit(X_train, y_train)
+
+# Predict and evaluate
+accuracy = xgb_clf.score(X_test, y_test)
+print(f'Accuracy: {accuracy}')
+
