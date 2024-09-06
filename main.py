@@ -25,3 +25,12 @@ print(f'y_test: {y_test}')
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 
+# Initialize and fit the linear regression model
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+
+# Predict and evaluate
+predictions = lin_reg.predict(X_test)
+mse = mean_squared_error(y_test, predictions)
+print(f'Mean Squared Error: {mse}')
+
