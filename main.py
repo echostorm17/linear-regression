@@ -79,3 +79,18 @@ random_search.fit(X_train, y_train)
 print(f'Best parameters: {random_search.best_params_}')
 print(f'Best cross-validation score: {random_search.best_score_}')
 
+import joblib
+
+# Save model
+joblib.dump(random_search.best_estimator_, 'model.pkl')
+
+# Load and use the model
+model = joblib.load('model.pkl')
+new_data = X_test.iloc[:5, :] 
+new_predictions = model.predict(new_data)
+print(f'new_data: {new_data}')
+new_data_id = [x - 1 for x in new_data['id']]
+print(f'new_data_id: {new_data_id}')
+print(f'y_test: {y_test[new_data_id].tolist()}')
+print(type(y_test[new_data_id]))
+print(f'new_predictions: {new_predictions}')
